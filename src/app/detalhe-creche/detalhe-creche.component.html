@@ -6,8 +6,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active">Home
-        <span class="sr-only">(current)</span>
+      <a class="nav-item nav-link">Home
       </a>
       <a class="nav-item nav-link" [routerLink]="['/lista-creche']">Ongs</a>
     </div>
@@ -17,12 +16,14 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="#">Home</a>
+      <a [routerLink]="['/home']">Home</a>
     </li>
     <li class="breadcrumb-item">
-      <a href="#">Library</a>
+      <a [routerLink]="['/lista-creche']">Ongs</a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/detalhe-ong']">Detalhe Ongs</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Detalhe Creches</li>
   </ol>
 </nav>
