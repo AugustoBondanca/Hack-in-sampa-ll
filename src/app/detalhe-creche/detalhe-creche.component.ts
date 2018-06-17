@@ -15,6 +15,7 @@ export class DetalheCrecheComponent implements OnInit {
   resultSearch: boolean = false;
   urlImovel: string;
 
+
   constructor(private http: Http) { }
 
   ngOnInit() {
