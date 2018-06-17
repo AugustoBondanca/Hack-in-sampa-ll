@@ -15,3 +15,9 @@ button.btn.btn-outline-primary {
     position: absolute;
     right: 630px;
 }
+#messageBanner{
+    color: white;
+    position: absolute;
+    top: 300px;
+    margin-left: 220px;
+}
