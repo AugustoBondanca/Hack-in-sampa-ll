@@ -28,15 +28,54 @@
   </ol>
 </nav>
 <br />
-<ul class="list-group">
-  <li class="list-group-item disabled">Nome: {{allCreche.nome}}</li>
-  <li class="list-group-item">Quantidade total de alunos: {{allCreche.numerosAlunos}}</li>
-  <li class="list-group-item">Quantidade de Alunos Bercário: {{allCreche.alunosBercarios}}</li>
-  <li class="list-group-item">Faixa etária: {{allCreche.faixaEtaria}}</li>
-  <li class="list-group-item">Custo total de Alunos: R${{allCreche.totalCrianca}}</li>
-  <li class="list-group-item">Valor do Aluguel: {{allCreche.valorAcrescimoCustear}}</li>
-  <li class="list-group-item">Custo Mensal: {{allCreche.valorPagTotalMensal}}</li>
-  <li class="list-group-item">Custo Semestral: {{allCreche.valorPagTotalSemestral}}</li>
-  <li class="list-group-item">Vigência de contrato: {{allCreche.vigencia}}</li>
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item ">Nome: {{allCreche.nome}}</li>
+    <li class="list-group-item ">Endereço: {{allCreche.endereco}}</li>
+    <li class="list-group-item">Quantidade total de alunos: {{allCreche.numerosAlunos}}</li>
+    <li class="list-group-item">Quantidade de Alunos Bercário: {{allCreche.alunosBercarios}}</li>
+    <li class="list-group-item">Faixa etária: {{allCreche.faixaEtaria}}</li>
+    <li class="list-group-item">Custo total de Alunos: R${{allCreche.totalCrianca}}</li>
+    <li class="list-group-item">Valor do Aluguel: {{allCreche.valorAcrescimoCustear}}</li>
+    <li class="list-group-item">Custo Mensal: {{allCreche.valorPagTotalMensal}}</li>
+    <li class="list-group-item">Custo Semestral: {{allCreche.valorPagTotalSemestral}}</li>
+    <li class="list-group-item">Vigência de contrato: {{allCreche.vigencia}}</li>
+    <li class="list-group-item">Custo Médio de outras Creches: {{allCreche.valorMedioMensal}}</li>
+    <li class="list-group-item">Valor Investido por Criança: {{allCreche.custoPorCrianca}}</li>
+  </ul>
 
-</ul>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Comparar preços metro quadrado da região</h5>
+        <p class="card-text">Metro Quadrado da Creche: {{allCreche.metroCreche}}
+          <br/> Aluguel: {{allCreche.valorAcrescimoCustear}}
+        </p>
+        <button (click)="getImovel()" class="btn btn-primary">Pesquisar imóveis com a mesma metragem</button>
+      </div>
+    </div>
+    <div *ngIf="resultSearch == true">
+      <h3>Resultado:</h3>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Metro Quadrado do Imóvel: {{infoImovel.metro_quadrado}}
+            <br /> Aluguel: {{infoImovel.valor_aluguel}}
+            <br/> IPTU: {{infoImovel.iptu}}
+            <br/> Endereço: {{infoImovel.endereco}}
+            <!-- <br/> Link:
+            <a href="{{urlImovel}}">Clique aqui</a> -->
+            <br /> Resultado:
+            <span style="background-color: red">
+              <strong>ALUGUEL ATUAL É MAIOR</strong>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <p>
+
+
+    </p>
+  </div>
+
+</div>

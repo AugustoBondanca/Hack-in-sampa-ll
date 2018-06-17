@@ -9,7 +9,11 @@ import { Http } from '@angular/http';
 export class DetalheCrecheComponent implements OnInit {
 
   apiGetCreche = 'https://guarded-mountain-77925.herokuapp.com/api/apiNova.php';
+  apiGetImovel = 'https://guarded-mountain-77925.herokuapp.com/api/consultaBaseZapImoveis.php'
   allCreche = [];
+  infoImovel = [];
+  resultSearch: boolean = false;
+  urlImovel: string;
 
   constructor(private http: Http) { }
 
@@ -22,6 +26,18 @@ export class DetalheCrecheComponent implements OnInit {
       console.log('returned of API', res.json())
 
       this.allCreche = res.json();
+    })
+  }
+  getImovel() {
+    let url = this.apiGetImovel;
+    this.http.get(url).subscribe((res) => {
+      console.log('returned of API', res.json())
+
+      this.infoImovel = res.json();
+      this.urlImovel = res.json().url;
+      if (this.infoImovel != null) {
+        this.resultSearch = true;
+      }
     })
   }
 }
