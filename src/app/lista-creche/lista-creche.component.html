@@ -24,17 +24,14 @@
     <li class="breadcrumb-item active" aria-current="page">Creches</li>
   </ol>
 </nav>
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="search" placeholder="Pesquise ONGS" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-</form>
+
 <br/>
 
 <ul class="list-group">
   <a [routerLink]="['/detalhe-ong']">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      nome ONG
-      <span class="badge badge-primary badge-pill">Creches - 14</span>
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of allOng" (click)="getCreche(item.objeto)">
+      {{item.fornecedor}}
+      <span class="badge badge-primary badge-pill">Creches - </span>
     </li>
   </a>
 </ul>

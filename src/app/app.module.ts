@@ -8,6 +8,7 @@ import { ListaCrecheComponent } from './lista-creche/lista-creche.component';
 import { routing } from './app.routing';
 import { DetalheOngComponent } from './detalhe-ong/detalhe-ong.component';
 import { DetalheCrecheComponent } from './detalhe-creche/detalhe-creche.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DetalheCrecheComponent } from './detalhe-creche/detalhe-creche.componen
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

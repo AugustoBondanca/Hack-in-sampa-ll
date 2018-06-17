@@ -27,18 +27,13 @@
   </ol>
 </nav>
 
-<form class="form-inline my-2 my-lg-0">
-  <input class="form-control mr-sm-2" type="search" placeholder="Pesquise Creches" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-</form>
-
 <br/>
 
 <ul class="list-group">
   <a [routerLink]="['/detalhe-creche']">
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      nome Creche
-      <span class="badge badge-primary badge-pill">Alunos - 14</span>
+      {{allCreche.nome}}
+      <span class="badge badge-primary badge-pill">Alunos - {{allCreche.numerosAlunos}}</span>
     </li>
   </a>
 </ul>
